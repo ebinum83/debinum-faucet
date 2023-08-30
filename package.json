@@ -1,0 +1,63 @@
+{
+  "name": "debinum-faucet",
+  "version": "0.0.1",
+  "homepage": ".",
+  "author": "ebinum83",
+  "license": "MIT",
+  "description": "A Faucet that drips Test Tokens on Ethereum networks.",
+  "private": true,
+  "main": "truffle-config.js",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.2",
+    "@truffle/hdwallet-provider": "^2.1.13",
+    "bootstrap": "^5.3.1",
+    "dotenv": "^16.3.1",
+    "ethers": "^5.7.2",
+    "gh-pages": "^5.0.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2",
+    "react-scripts": "5.0.1",
+    "shelljs": "^0.8.5",
+    "web3": "^1.10.0"
+  },
+  "scripts": {
+    "clean": "rm -rf ./build ./contracts/build ./src/contracts",
+    "compile": "yarn clean && truffle compile",
+    "deploy:dev": "yarn compile && truffle deploy --reset --network dev",
+    "deploy:testnet": "yarn compile && truffle deploy --reset --network sepolia",
+    "rpc": "ganache -m '< mnemonic >' --fork sepolia",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -b master -d build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "ebinum83",
+    "ethereum",
+    "faucet",
+    "token",
+    "contracts",
+    "truffle"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
